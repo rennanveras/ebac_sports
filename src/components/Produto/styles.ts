@@ -15,6 +15,8 @@ export const Capa = styled.div`
     display: block;
     width: 100%;
     margin-bottom: 8px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
   }
 `
 
