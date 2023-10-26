@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import carrinhoReducer from './reducers/carrinho'
+import favoritoReducer from './reducers/favoritar'
 
 export const store = configureStore({
   reducer: {
-    carrinho: carrinhoReducer
+    carrinho: carrinhoReducer,
+    favorito: favoritoReducer
   }
 })
 

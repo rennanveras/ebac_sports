@@ -18,9 +18,10 @@ const carrinhoSlice = createSlice({
       const produtoAtual = action.payload
 
       if (state.itens.find((item) => item.id === produtoAtual.id)) {
-        alert('Item já adicionado')
+        state.itens = state.itens.filter((item) => item.id !== produtoAtual.id)
+        alert(`O item ${produtoAtual.nome} foi removido`)
       } else {
-        state.itens.push(produtoAtual)
+        state.itens = [...state.itens, produtoAtual]
       }
     }
   }

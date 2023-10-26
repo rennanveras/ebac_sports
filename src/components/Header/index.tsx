@@ -8,13 +8,13 @@ import { paraReal } from '../Produto'
 
 import { RootReducer } from '../../store'
 
-type Props = {
-  favoritos: Produto[]
-}
-
-const Header = ({ favoritos }: Props) => {
+const Header = () => {
   const itensNoCarrinho = useSelector(
     (state: RootReducer) => state.carrinho.itens
+  )
+
+  const itensFavoritos = useSelector(
+    (state: RootReducer) => state.favorito.itens
   )
 
   const valorTotal = itensNoCarrinho.reduce((acc, item) => {
@@ -24,9 +24,9 @@ const Header = ({ favoritos }: Props) => {
 
   return (
     <S.Header>
-      <h1>EBAC Sports</h1>
+      <h1>Veras Sports</h1>
       <div>
-        <span>{favoritos.length} favoritos</span>
+        <span>{itensFavoritos.length} favoritos</span>
         <img src={cesta} />
         <span>
           {itensNoCarrinho.length} itens, valor total: {paraReal(valorTotal)}
