@@ -3,8 +3,8 @@ import { createGlobalStyle } from 'styled-components'
 export const cores = {
   corTexto: '#121714',
   corFundo: '#eee',
-  corPrincipal: '#0c2461',
-  corSecundaria: '#4a69bd'
+  corPrincipal: '#093028',
+  corSecundaria: '#237A57'
 }
 
 export const GlobalStyle = createGlobalStyle`

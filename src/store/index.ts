@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 
 import carrinhoReducer from './reducers/carrinho'
 import favoritoReducer from './reducers/favoritar'

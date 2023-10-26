@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux'
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 
 import { Produto as ProdutoType } from '../../App'
 import * as S from './styles'
@@ -31,28 +32,28 @@ const ProdutoComponent = ({ produto }: Props) => {
       <S.Prices>
         <strong>{paraReal(produto.preco)}</strong>
       </S.Prices>
-      <S.BtnComprar
-        onClick={() => {
-          dispatch(favoritar(produto))
-          setAdicionadosAosFavoritos(!adicionadosAosFavoritos)
-        }}
-        type="button"
-      >
-        {adicionadosAosFavoritos
-          ? '- Remover dos favoritos'
-          : '+ Adicionar aos favoritos'}
-      </S.BtnComprar>
-      <S.BtnComprar
-        onClick={() => {
-          dispatch(adicionar(produto))
-          setAdicionadosAoCarrinho(!adicionadosAoCarrinho)
-        }}
-        type="button"
-      >
-        {adicionadosAoCarrinho
-          ? 'Remover Do Carrinho'
-          : 'Adicionar Ao Carrinho'}
-      </S.BtnComprar>
+      <S.AreaBtn>
+        <S.BtnComprar
+          onClick={() => {
+            dispatch(adicionar(produto))
+            setAdicionadosAoCarrinho(!adicionadosAoCarrinho)
+          }}
+          type="button"
+        >
+          {adicionadosAoCarrinho
+            ? 'Remover Do Carrinho'
+            : 'Adicionar Ao Carrinho'}
+        </S.BtnComprar>
+        <S.BtnFavorito
+          onClick={() => {
+            dispatch(favoritar(produto))
+            setAdicionadosAosFavoritos(!adicionadosAosFavoritos)
+          }}
+          type="button"
+        >
+          {adicionadosAosFavoritos ? <AiFillHeart /> : <AiOutlineHeart />}
+        </S.BtnFavorito>
+      </S.AreaBtn>
     </S.Produto>
   )
 }

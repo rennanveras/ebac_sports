@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux'
+import { AiFillHeart } from 'react-icons/ai'
 
 import * as S from './styles'
 
-import { Produto } from '../../App'
 import cesta from '../../assets/cesta.png'
 import { paraReal } from '../Produto'
 
@@ -26,7 +26,9 @@ const Header = () => {
     <S.Header>
       <h1>Veras Sports</h1>
       <div>
-        <span>{itensFavoritos.length} favoritos</span>
+        <span>
+          <AiFillHeart /> {itensFavoritos.length}
+        </span>
         <img src={cesta} />
         <span>
           {itensNoCarrinho.length} itens, valor total: {paraReal(valorTotal)}
